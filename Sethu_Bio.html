@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marriage Biodata - Sethu V</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+Tamil:wght@400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C6A94E;
+    --gold-light: #E8D48B;
+    --gold-dark: #9E7B2F;
+    --maroon: #6B1D2A;
+    --maroon-deep: #4A0E1C;
+    --cream: #FDF6E3;
+    --cream-dark: #F5E6C8;
+    --text-dark: #2C1810;
+    --text-medium: #5A3D2E;
+    --border-ornate: #D4A853;
+
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Lora', Georgia, serif;
+    --font-accent: 'EB Garamond', Georgia, serif;
+    --font-tamil: 'Noto Serif Tamil', serif;
+    --font-label: 'Lora', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 30px 15px;
+    font-family: var(--font-body);
+  }
+
+  .biodata-page {
+    width: 100%;
+    max-width: 800px;
+    background: var(--cream);
+    position: relative;
+    padding: 0;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+
+  /* Ornate Border Frame */
+  .border-frame {
+    position: absolute;
+    inset: 12px;
+    border: 2px solid var(--gold);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .border-frame::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid var(--gold-light);
+  }
+
+  /* Corner Ornaments */
+  .corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+  }
+  .corner svg { width: 100%; height: 100%; }
+  .corner-tl { top: 8px; left: 8px; }
+  .corner-tr { top: 8px; right: 8px; transform: scaleX(-1); }
+  .corner-bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+  .corner-br { bottom: 8px; right: 8px; transform: scale(-1, -1); }
+
+  /* Header Section */
+  .header {
+    background: linear-gradient(135deg, var(--maroon-deep) 0%, var(--maroon) 50%, var(--maroon-deep) 100%);
+    padding: 45px 40px 35px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(198, 169, 78, 0.03) 20px,
+      rgba(198, 169, 78, 0.03) 40px
+    );
+  }
+
+  .om-symbol {
+    font-size: 38px;
+    color: var(--gold);
+    margin-bottom: 4px;
+    text-shadow: 0 2px 10px rgba(198, 169, 78, 0.4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-subtitle {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header-line {
+    width: 220px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .header-line::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--gold);
+    font-size: 10px;
+    background: var(--maroon);
+    padding: 0 8px;
+  }
+
+  .groom-name {
+    font-family: var(--font-heading);
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-shadow: 0 2px 15px rgba(198, 169, 78, 0.3);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 8px;
+  }
+
+  .groom-name-tamil {
+    font-family: var(--font-tamil);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold-light);
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .header-tagline {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(232, 212, 139, 0.7);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Content Area */
+  .content {
+    padding: 35px 45px 40px;
+    position: relative;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--maroon);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-title::before,
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+  .section-title::after {
+    background: linear-gradient(270deg, var(--gold), transparent);
+  }
+
+  .section-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--maroon);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* Detail Rows */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .detail-row {
+    display: flex;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(198, 169, 78, 0.15);
+    transition: background 0.2s;
+  }
+  .detail-row:hover {
+    background: rgba(198, 169, 78, 0.06);
+  }
+
+  .detail-row.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .detail-label {
+    font-family: var(--font-label);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold-dark);
+    min-width: 125px;
+    font-weight: 600;
+    padding-top: 3px;
+  }
+
+  .detail-value {
+    font-family: var(--font-accent);
+    font-size: 17px;
+    color: var(--text-dark);
+    font-weight: 600;
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .detail-value.highlight {
+    color: var(--maroon);
+  }
+
+  /* Family Section */
+  .family-card {
+    background: linear-gradient(135deg, rgba(198, 169, 78, 0.06), rgba(107, 29, 42, 0.04));
+    border: 1px solid rgba(198, 169, 78, 0.2);
+    border-radius: 6px;
+    padding: 16px 18px;
+    margin-bottom: 8px;
+  }
+
+  .family-member {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px dashed rgba(198, 169, 78, 0.15);
+  }
+  .family-member:last-child { border-bottom: none; }
+
+  .family-relation {
+    font-family: var(--font-label);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-dark);
+    font-weight: 600;
+    min-width: 80px;
+  }
+
+  .family-name {
+    font-family: var(--font-accent);
+    font-size: 17px;
+    color: var(--text-dark);
+    font-weight: 600;
+    flex: 1;
+    margin-left: 14px;
+  }
+
+  .family-detail {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--text-medium);
+    text-align: right;
+    font-style: italic;
+  }
+
+  /* Assets Section */
+  .assets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .asset-card {
+    background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+    border-radius: 6px;
+    padding: 18px 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .asset-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(198, 169, 78, 0.3);
+    border-radius: 6px;
+  }
+
+  .asset-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .asset-title {
+    font-family: var(--font-label);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+
+  .asset-value {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* Address Section */
+  .address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .address-card {
+    background: rgba(198, 169, 78, 0.06);
+    border: 1px solid rgba(198, 169, 78, 0.2);
+    border-radius: 6px;
+    padding: 16px 18px;
+  }
+
+  .address-label {
+    font-family: var(--font-label);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--gold-dark);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .address-text {
+    font-family: var(--font-accent);
+    font-size: 16px;
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+
+  /* Contact Footer */
+  .contact-bar {
+    background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
+    padding: 22px 35px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold-light);
+    font-family: var(--font-body);
+    font-size: 14px;
+  }
+
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(198, 169, 78, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 18px;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-medium);
+    border-top: 1px solid rgba(198, 169, 78, 0.2);
+  }
+  .footer span {
+    color: var(--gold-dark);
+  }
+
+  /* Responsive */
+  @media (max-width: 650px) {
+    .detail-grid { grid-template-columns: 1fr; }
+    .assets-grid { grid-template-columns: 1fr; }
+    .address-grid { grid-template-columns: 1fr; }
+    .content { padding: 25px 20px 30px; }
+    .groom-name { font-size: 32px; }
+    .groom-name-tamil { font-size: 18px; }
+    .header { padding: 35px 20px 28px; }
+    .contact-bar { gap: 20px; }
+  }
+
+  /* Print styles */
+  @media print {
+    body { background: white; padding: 0; }
+    .biodata-page { box-shadow: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="biodata-page">
+
+  <!-- Corner Ornaments -->
+  <div class="corner corner-tl">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 Q5 30 30 30 Q5 30 5 55" stroke="#C6A94E" stroke-width="1.5" fill="none"/>
+      <path d="M10 5 Q10 25 30 25" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <path d="M5 10 Q25 10 25 30" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <circle cx="15" cy="15" r="3" fill="#C6A94E" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="corner corner-tr">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 Q5 30 30 30 Q5 30 5 55" stroke="#C6A94E" stroke-width="1.5" fill="none"/>
+      <path d="M10 5 Q10 25 30 25" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <path d="M5 10 Q25 10 25 30" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <circle cx="15" cy="15" r="3" fill="#C6A94E" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="corner corner-bl">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 Q5 30 30 30 Q5 30 5 55" stroke="#C6A94E" stroke-width="1.5" fill="none"/>
+      <path d="M10 5 Q10 25 30 25" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <path d="M5 10 Q25 10 25 30" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <circle cx="15" cy="15" r="3" fill="#C6A94E" opacity="0.4"/>
+    </svg>
+  </div>
+  <div class="corner corner-br">
+    <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5 Q5 30 30 30 Q5 30 5 55" stroke="#C6A94E" stroke-width="1.5" fill="none"/>
+      <path d="M10 5 Q10 25 30 25" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <path d="M5 10 Q25 10 25 30" stroke="#C6A94E" stroke-width="0.8" fill="none"/>
+      <circle cx="15" cy="15" r="3" fill="#C6A94E" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- Border Frame -->
+  <div class="border-frame"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="om-symbol">ॐ</div>
+    <div class="header-subtitle">Marriage Biodata</div>
+    <div class="header-line"></div>
+    <h1 class="groom-name">SETHU . V</h1>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+
+    <!-- Personal Details -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-icon">✦</span>
+        Personal Details
+      </div>
+      <div class="detail-grid">
+        <div class="detail-row">
+          <span class="detail-label">Date of Birth</span>
+          <span class="detail-value">27 March 2001</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Time of Birth</span>
+          <span class="detail-value">11:33 AM</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Age</span>
+          <span class="detail-value">25 Years</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Height</span>
+          <span class="detail-value">164 CM (5'5")</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Complexion</span>
+          <span class="detail-value">Wheatish</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Religion</span>
+          <span class="detail-value highlight">Hindu</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Caste</span>
+          <span class="detail-value">Naidu (Vadukar)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Mother Tongue</span>
+          <span class="detail-value">Tamil</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horoscope Details -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-icon">☽</span>
+        Horoscope Details
+      </div>
+      <div class="detail-grid">
+        <div class="detail-row">
+          <span class="detail-label">Natchathiram</span>
+          <span class="detail-value highlight">Asvini</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Raasi</span>
+          <span class="detail-value highlight">Mesham (Aries)</span>
+        </div>
+        <div class="detail-row full-width">
+          <span class="detail-label">Lagnam</span>
+          <span class="detail-value highlight">Mithunam (Gemini)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education & Career -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-icon">◈</span>
+        Education & Career
+      </div>
+      <div class="detail-grid">
+        <div class="detail-row full-width">
+          <span class="detail-label">Education</span>
+          <span class="detail-value">B.E — Mechanical Engineering</span>
+        </div>
+        <div class="detail-row full-width">
+          <span class="detail-label">Occupation</span>
+          <span class="detail-value highlight">Branding Manager</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Company</span>
+          <span class="detail-value">Micheal Infotech, Dubai (Worked in Coimbatore)</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Annual Income</span>
+          <span class="detail-value highlight">₹ 5,00,000 Per Annum</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Family Details -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-icon">❋</span>
+        Family Details
+      </div>
+      <div class="family-card">
+        <div class="family-member">
+          <span class="family-relation">Father</span>
+          <span class="family-name">C. Vengatesan</span>
+          <span class="family-detail">Retired</span>
+        </div>
+        <div class="family-member">
+          <span class="family-relation">Mother</span>
+          <span class="family-name">V. Jothi</span>
+          <span class="family-detail">Late</span>
+        </div>
+        <div class="family-member">
+          <span class="family-relation">Brother</span>
+          <span class="family-name">V. Saran</span>
+          <span class="family-detail">Server Engineer, Coimbatore — Unmarried</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Assets -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-icon">⬙</span>
+        Assets
+      </div>
+      <div class="assets-grid">
+        <div class="asset-card">
+          <div class="asset-icon">🏠</div>
+          <div class="asset-title">Own House</div>
+          <div class="asset-value">Residential</div>
+        </div>
+        <div class="asset-card">
+          <div class="asset-icon">🌾</div>
+          <div class="asset-title">Agri Land</div>
+          <div class="asset-value">4 Acres</div>
+        </div>
+        <div class="asset-card">
+          <div class="asset-icon">🏗️</div>
+          <div class="asset-title">City Property</div>
+          <div class="asset-value">5 + 5 Cents</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="section">
+      <div class="section-title">
+        <span class="section-icon">⌖</span>
+        Address
+      </div>
+      <div class="address-grid">
+        <div class="address-card">
+          <div class="address-label">Permanent Address</div>
+          <div class="address-text">
+            2/71, Vaiyampatty,<br>
+            Manaparai (Tk),<br>
+            Trichy (Dt) — 621315
+          </div>
+        </div>
+        <div class="address-card">
+          <div class="address-label">Current Address</div>
+          <div class="address-text">
+            Balaji Mansion,<br>
+            CIT Colony, Hopes,<br>
+            Coimbatore
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Contact Footer -->
+  <div class="contact-bar">
+    <div class="contact-item">
+      <span class="contact-icon">📍</span>
+      <span>Vaiyampatty, Trichy</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>❖</span> &nbsp; Created By Sethu &nbsp; <span>❖</span>
+  </div>
+
+</div>
+
+</body>
+</html>
